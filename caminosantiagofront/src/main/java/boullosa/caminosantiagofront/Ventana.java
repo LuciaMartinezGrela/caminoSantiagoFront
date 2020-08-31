@@ -4,7 +4,12 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
+import javax.swing.border.EmptyBorder;
+
 import java.awt.BorderLayout;
+import java.awt.Color;
+
+import javax.swing.JPanel;
 
 public class Ventana extends JFrame{
 
@@ -14,22 +19,29 @@ public class Ventana extends JFrame{
 	 * Create the application.
 	 */
 	public Ventana() {
-		//frame = new JFrame();
+		
 		
 		int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 	    int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
 	    
-		frame.setBounds(100, 100, ancho, alto);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLocationRelativeTo(null);//centrar ventana en la pantalla
-		frame.setUndecorated(true);
+		setBounds(100, 100, ancho, alto);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);//centrar ventana en la pantalla
+		
+		JPanel contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		setUndecorated(true);
 		
 		
 		JTextArea textAreaExp = new JTextArea();
-		frame.getContentPane().add(textAreaExp, BorderLayout.CENTER);
+		contentPane.add(textAreaExp);
 		
 		JTextArea textAreaAutor = new JTextArea();
-		frame.getContentPane().add(textAreaAutor, BorderLayout.SOUTH);
+		contentPane.add(textAreaAutor);
 		//frame.setUndecorated();
 	}
 
