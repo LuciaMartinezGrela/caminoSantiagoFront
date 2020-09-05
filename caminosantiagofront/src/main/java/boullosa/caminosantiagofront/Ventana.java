@@ -54,6 +54,7 @@ public class Ventana extends JFrame{
 		textAreaExp.setBounds(92, 51, 1648, 585);
 		textAreaExp.setLineWrap(true);//salto de linea automatico
 		textAreaExp.setWrapStyleWord(true);//busca que el salto de linea sea entre espacios
+		textAreaExp.setEditable(false);
 		contentPane.add(textAreaExp);
 		
 		textAreaAutor = new JTextArea();
@@ -62,6 +63,7 @@ public class Ventana extends JFrame{
 		textAreaAutor.setBounds(942, 741, 476, 74);
 		textAreaAutor.setLineWrap(true);
 		textAreaAutor.setWrapStyleWord(true);
+		textAreaAutor.setEditable(false);
 		contentPane.add(textAreaAutor);
 		
 		setUndecorated(true);
