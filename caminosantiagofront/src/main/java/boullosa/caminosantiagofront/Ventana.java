@@ -14,6 +14,8 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Insets;
+
 import javax.swing.JTextField;
 
 public class Ventana extends JFrame{
@@ -22,7 +24,7 @@ public class Ventana extends JFrame{
 	
 	public JFrame frame;
 	public JTextArea textAreaExp;
-	public JTextArea textAreaAutor;
+	public JTextField textAreaAutor;
 
 	/**
 	 * Create the application.
@@ -40,35 +42,28 @@ public class Ventana extends JFrame{
 		
 		JPanel contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 10, 10);
-		contentPane.add(panel);
+		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		textAreaExp = new JTextArea();
 		textAreaExp.setFont(new Font("Arial", Font.PLAIN, 55));
 		textAreaExp.setBackground(Color.WHITE);
-		textAreaExp.setBounds(92, 51, 1648, 585);
 		textAreaExp.setLineWrap(true);//salto de linea automatico
 		textAreaExp.setWrapStyleWord(true);//busca que el salto de linea sea entre espacios
+		textAreaExp.setMargin(new Insets(50,50,50,50));	
 		textAreaExp.setEditable(false);
-		contentPane.add(textAreaExp);
+		contentPane.add(textAreaExp, BorderLayout.PAGE_START);
 		
-		textAreaAutor = new JTextArea();
+		textAreaAutor = new JTextField();
 		textAreaAutor.setFont(new Font("Arial", Font.PLAIN, 55));
+		textAreaAutor.setBorder(new EmptyBorder(50, 50, 50, 50));
 		textAreaAutor.setBackground(Color.white);
-		textAreaAutor.setBounds(942, 741, 476, 74);
-		textAreaAutor.setLineWrap(true);
-		textAreaAutor.setWrapStyleWord(true);
+		textAreaAutor.setHorizontalAlignment(JTextField.CENTER);
 		textAreaAutor.setEditable(false);
-		contentPane.add(textAreaAutor);
+		contentPane.add(textAreaAutor, BorderLayout.PAGE_END);
 		
-		setUndecorated(true);
-		textAreaExp.setLineWrap(true);
-		
+		setUndecorated(true);		
 		
 		setVisible(true);
 		
